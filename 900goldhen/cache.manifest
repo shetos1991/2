@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# Shetos background update 2026-11-07-v6
+
+CACHE: 
+../shetos-background-v5.jpg
+../shetos-style-v5.css
+goldhen_2.4b18.13.bin
+index.html
+int64.js
+kexploit.js
+rop.js
+webkit.js
