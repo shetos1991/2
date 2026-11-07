@@ -283,12 +283,12 @@ if (SHOW_LOG && !SENT_HOME && document.body) {
   try {
     if (outEl) {
       outEl.removeAttribute("style");
-      outEl.shetos-style-v8.cssText =
+      outEl.style.cssText =
         "display:block;white-space:pre-wrap;overflow:auto;max-height:70vh;";
     }
     if (stateEl) {
       stateEl.removeAttribute("style");
-      stateEl.shetos-style-v8.cssText = "display:block;";
+      stateEl.style.cssText = "display:block;";
     }
     var ramShow = document.getElementById("ramBox");
     if (ramShow) ramShow.style.display = "";
