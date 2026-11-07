@@ -3,6 +3,30 @@
 <head>
 <title>PS4 [5.05] 7.00 - 14.00 FW GoldHEN Host by Shetos</title>
 <link rel="stylesheet" href="../shetos-style-v8.css">
+<style>
+#out, #state { position: fixed !important; left: 3% !important; right: 3% !important; width: 94% !important; opacity: 1 !important; background: #080e20 !important; color: #fff !important; padding: 12px !important; box-sizing: border-box; z-index: 100; text-align: left; font: 16px monospace; }
+#state { top: 52% !important; height: auto !important; max-height: 12vh; overflow: auto !important; }
+#out { top: 65% !important; height: 28vh !important; overflow: auto !important; white-space: pre-wrap; }
+#host-error { position: fixed; top: 35%; left: 3%; width: 94%; background: #381414; color: white; z-index: 101; white-space: pre-wrap; }
+</style>
+<script>
+function showHostError(message) {
+    var element = document.getElementById('host-error');
+    if (!element) {
+        element = document.createElement('pre');
+        element.id = 'host-error';
+        (document.body || document.documentElement).appendChild(element);
+    }
+    element.textContent = 'Shetos diagnostic v10 | ' + navigator.userAgent + '\n' + message;
+}
+window.addEventListener('error', function (event) {
+    var target = event.target;
+    showHostError(event.message ? event.message + '\n' + event.filename + ':' + event.lineno : 'Resource failed: ' + (target.src || target.href || 'unknown'));
+}, true);
+window.addEventListener('unhandledrejection', function (event) {
+    showHostError('Unhandled error: ' + String(event.reason && (event.reason.stack || event.reason.message) || event.reason));
+});
+</script>
 </head>
 <body>
 <script>
@@ -103,6 +127,7 @@ if (!isPS4) {
 <h1>PS4 [5.05] 7.00 - 14.00 FW GoldHEN Host by Shetos</h1>
 <hr>
 <br>
+<p>Shetos diagnostic v10</p>
 <h1 id=msgs style="font-size: 30px;margin-top: 77px;margin-bottom: 455px;">Loading GoldHEN v2.4b18.13... Please Wait</h1>
 <h1 style="margin-top: 43px;">Shetos</h1>
 </body>
