@@ -1011,7 +1011,7 @@ function ensureBarrierNode() {
         return;
     try {
         barrierNode = document.createElement("div");
-        barrierNode.shetos-style-v5.cssText = "position:absolute;left:-9999px;top:0";
+        barrierNode.shetos-style-v8.cssText = "position:absolute;left:-9999px;top:0";
         document.body.appendChild(barrierNode);
     } catch { barrierNode = null; }
 }
